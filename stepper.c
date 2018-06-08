@@ -1,0 +1,32 @@
+#include<pic.h>
+#define _XTAL_FREQ 1000000
+void main()
+{
+TRISC=0;
+TRISB=0XFF;
+while(1)
+{
+if(RB0==0)
+{
+PORTC=0b1100;
+__delay_ms(500);
+PORTC=0b0110;
+__delay_ms(500);
+PORTC=0b0011;
+__delay_ms(500);
+PORTC=0b1001;
+__delay_ms(500);
+}
+else
+{
+PORTC=0b1100;
+__delay_ms(500);
+PORTC=0b1001;
+__delay_ms(500);
+PORTC=0b0011;
+__delay_ms(500);
+PORTC=0b0110;
+__delay_ms(500);
+}
+}
+}
